@@ -12,7 +12,7 @@ const App = () => {
     const {mode} = useSelector(s => s.movies)
 
     return (
-        <div style={{color: mode ? "black" : "white"}}>
+        <div style={{color: mode ? "red" : "white"}}>
             <div className="containers">
                 <Header/>
                 <Routes>

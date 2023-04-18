@@ -15,6 +15,7 @@ const Header = () => {
 
     const handleClick = (text) => {
         if (value.trim().length !== 0) {
+            setState(true)
             navigate(`/movie/searchMovie/${text}`)
         }
         setValue("")
