@@ -74,7 +74,8 @@ const MovieDetails = () => {
 
     return (
         <>
-            <div className="fixed w-full h-full left-0 top-0 blur-lg -z-10" style={{background: `url("https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/${backdrop_path}")  center/cover`}}></div>
+            <div className="fixed w-full h-full bg-black/50 -z-10 left-0 top-0"></div>
+            <div className="fixed w-full h-full left-0 bg-black/50 top-0 blur-lg -z-20" style={{background: `url("https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/${backdrop_path}")  center/cover`}}></div>
             <div className="flex items-start my-32">
                 <img src={`https://www.themoviedb.org/t/p/w300_and_h450_bestv2/${poster_path}`} alt=""/>
                 <div className="m-7">
