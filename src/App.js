@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Movie from "./Components/Movie/Movie";
+import {Route, Routes} from "react-router-dom";
+import Header from "./Components/Header";
+import MovieDetails from "./Components/Movie/Moviedetils";
+import {useSelector} from "react-redux";
+import MovieSearch from "./Components/Movie/MovieSearch";
+import MoviesActors from "./Components/Movie/MoviesActors";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+
+const App = () => {
+    const {mode} = useSelector(s => s.movies)
+
+    return (
+        <div style={{color: mode ? "black" : "white"}}>
+            <div className="containers">
+                <Header/>
+                <Routes>
+                    <Route path={"/"} element={<Movie/>}/>
+                    <Route path={"/movieDetails/:mainId"} element={<MovieDetails/>}/>
+                    <Route path={"/movie/searchMovie/:movieName"} element={<MovieSearch/>}/>
+                    <Route path={"/movie/actor/:movieId"} element={<MoviesActors/>}/>
+                </Routes>
+            </div>
+        </div>
+    );
+};
 
 export default App;
